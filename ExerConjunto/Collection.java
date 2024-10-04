@@ -1,8 +1,9 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public interface Collection<T> {
-    boolean belongs(List<T> value);
-    List<T> union(List<T> value);
-    List<T> intersection(List<T> value);
-    boolean contains(List<T> value);
+    boolean belongs(Collection<T> value);
+    Collection<T> union(Collection<T> value);
+    Collection<T> intersection(Collection<T> value);
+    boolean contains(Collection<T> value);
+    ArrayList<T> getSet();
 }

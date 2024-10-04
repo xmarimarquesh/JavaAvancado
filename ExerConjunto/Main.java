@@ -1,20 +1,30 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
-        // Criando dois conjuntos
-        List<Integer> conjuntoA = new ArrayList<>();
+
+        ArrayList<Integer> conjuntoA = new ArrayList<>();
         conjuntoA.add(1);
         conjuntoA.add(2);
         conjuntoA.add(3);
 
-        List<Integer> conjuntoB = new ArrayList<>();
+        ArrayList<Integer> conjuntoB = new ArrayList<>();
         conjuntoB.add(3);
         conjuntoB.add(4);
         conjuntoB.add(5);
+        
+        Collection<Integer> setA = new Set<Integer>(conjuntoA);
+        Collection<Integer> setB = new Set<Integer>(conjuntoB);
 
-        Set<Integer> setA = new Set<>(conjuntoA);
-        Set<Integer> setB = new Set<>(conjuntoB);
+        
+        Collection<Integer> uniao = new Set<Integer>();
+        
+        uniao = setA.union(setB);
+        
+        System.err.println(uniao.getSet());
+        
+        System.out.println("Conjunto A: " + setA.getSet());
+        System.out.println("Conjunto B: " + setB.getSet());
     }
 }
