@@ -1,6 +1,8 @@
+import java.util.List;
+
 public interface Collection<T> {
-    boolean belongs(Collection<T>[] value);
-    Collection<T>[] union(Collection<T>[] value);
-    Collection<T>[] intersection(Collection<T>[] value);
-    boolean contains(Collection<T>[] value);
+    boolean belongs(List<T> value);
+    List<T> union(List<T> value);
+    List<T> intersection(List<T> value);
+    boolean contains(List<T> value);
 }

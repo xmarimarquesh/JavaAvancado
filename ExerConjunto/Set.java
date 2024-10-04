@@ -1,39 +1,34 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Set<T> implements Collection<T> {
-    private ArrayList<T> set = new ArrayList<T>();
+    private List<T> set = new ArrayList<>();
 
-    public ArrayList<T> getSet() {
+    public List<T> getSet() {
         return set;
     }
 
-    public Set(ArrayList<T> conjunto){
+    public Set(List<T> conjunto){
         this.set = conjunto;
     }
-    
+
     @Override
-    public boolean belongs(Collection<T>[] value) {
-        return true;
+    public boolean belongs(List<T> value) {
+        //
     }
 
     @Override
-    public Collection<T>[] union(Collection<T>[] value) {
+    public List<T> union(List<T> value) {
+        //
     }
 
     @Override
-    public Collection<T>[] intersection(Collection<T>[] value) {
-        Collection<T>[] sla = new Set<T>[]();
-        return sla;
+    public List<T> intersection(List<T> value) {
+        //
     }
 
     @Override
-    public boolean contain(Collection<T>[] value) {
-        return true;
+    public boolean contains(List<T> value) {
+        //
     }
-
-
-   
-
-    
-    
 }
