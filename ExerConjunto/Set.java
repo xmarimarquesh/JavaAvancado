@@ -13,9 +13,51 @@ public class Set<T> implements Collection<T> {
         this.set = conjunto;
     }
 
+    // @Override
+    // public boolean belongs(Integer value) {
+    //     Collection<T> newCollection = new Set<T>();
+    //     newCollection = value;
+    
+
+    
+    //     // while (true) {
+    //     //     for(int i = 0; i < newCollection.getSet().size(); i++){
+    //     //         if(newCollection.getSet().get(i) instanceof Set<?>){
+    //     //             newCollection = (Collection<T>)newCollection.getSet().get(i);
+
+    //     //             // for (int j = 0; j < newCollection.getSet().size(); j++) {
+    //     //             //     if (this.set.contains(newCollection.getSet().get(j))) {
+    //     //             //         continue
+    //     //             //     } else {
+    //     //             //         return false
+    //     //             //     }
+    //     //             }
+            
+    //     //         }
+    
+    //     //     }
+    //     // }
+    //     return true;
+    // }
+
     @Override
-    public boolean belongs(Collection<T> value) {
-        return true;
+    public boolean belongs(Set<?> set, Object value) {
+
+        for (Object elemento : this.getSet()) {
+            if(elemento.equals(value)){
+                return true;
+            } else if ( elemento instanceof Set<?> ) {
+                boolean pertence = belongs(( Set<?>)elemento, value);
+
+                if(pertence){
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        return false;
     }
 
     @Override
@@ -35,18 +77,21 @@ public class Set<T> implements Collection<T> {
 
     @Override
     public Collection<T> intersection(Collection<T> value) {
-        return (Collection<T>)set;
+        Collection<T> newCollection = new Set<T>();
+        
+        for(int i = 0; i < value.getSet().size(); i++){
+            for(int j = 0; j < this.getSet().size(); j++){
+                if(value.getSet().get(i) == this.getSet().get(j)){
+                    newCollection.getSet().add(value.getSet().get(i));
+                }
+            }
+        }
+
+        return newCollection;
     }
 
     @Override
     public boolean contains(Collection<T> value) {
         return true;
-    }
-    
-
-
-   
-
-    
-    
+    }    
 }
