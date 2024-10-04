@@ -16,7 +16,6 @@ public class Main {
         
         Collection<Integer> setA = new Set<Integer>(conjuntoA);
         Collection<Integer> setB = new Set<Integer>(conjuntoB);
-
         
         Collection<Integer> uniao = new Set<Integer>();
         
